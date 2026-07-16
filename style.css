@@ -17,6 +17,9 @@ h1 {
 }
 
 .panel {
+  position: relative;
+  overflow: hidden;
+
   height: 80vh;
   background-size: cover;
   background-position: center;
@@ -28,6 +31,27 @@ h1 {
   margin: 10px;
   position: relative;
   transition: flex 0.7s;
+  /* background-color: black; */
+}
+
+.panel::before {
+  content: "SECRET";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to bottom, #6a3093, #a044ff);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 5px;
+
+  transition: opacity 0.5s;
+  z-index: 2;
 }
 
 .panel h3 {
@@ -44,6 +68,11 @@ h1 {
 
 .panel.active {
   flex: 10;
+}
+
+.panel.active::before {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .panel.active h3 {
