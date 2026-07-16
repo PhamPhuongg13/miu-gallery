@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  background-color: aqua;
+  color: blue;
+  border-radius: 50px;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+}
+
+.panel {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 1;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s;
+}
+
+.panel h3 {
+  margin: 0; /* xoá mặc định h1 */
+  bottom: 20px;
+  left: 20px;
+  font-size: 24px;
+  position: absolute;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.458);
+  padding: 2px 20px;
+  border: 15px;
+}
+
+.panel.active {
+  flex: 10;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 1s 0.7s;
+}
+
+@media (max-width: 720px) {
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
